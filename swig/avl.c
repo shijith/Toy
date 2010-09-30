@@ -1,6 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
-/* Program - AVL Tree
+/* Program - AVL Tree swig version
 notes: temp golbal pointer used as a traverser in find_pos, so put it
 in correct position before calling find_pos.
 	 */
@@ -131,6 +131,10 @@ void tra(struct node *t)
 								tra(t -> right);
 				}
 }
+void prints()
+{
+				tra(root);
+}
 
 void inserts(int n)
 {
@@ -211,17 +215,4 @@ void deletes(int n)
 				} 
 				bf(par);
 				
-}
-main()
-{
-				int i, d = 3, a[] = {4, 3, 12, 13, 9};
-				starts();
-				for(i = 0; i < 5; i++) {
-								printf("Inserting %d\n", a[i]);
-								inserts(a[i]);
-								tra(root);
-				}
-				printf("Deleting %d\n", d);
-				deletes(d);
-				tra(root);
 }

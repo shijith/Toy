@@ -1,0 +1,4 @@
+swig -python avl.i
+gcc -c avl.c avl_wrap.c -I /usr/include/python2.6/
+ld -shared avl.o avl_wrap.o -o _avl.so
+python a.py
