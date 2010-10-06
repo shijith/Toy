@@ -4,7 +4,7 @@
 main()
 {
 	int len, i = 0;
-	char *cmd[5], c;
+	char **cmd, c;
 	while(1) {
 		len = 0;
 		i = 0;
@@ -13,7 +13,7 @@ main()
        		fflush(stdout);	
 
 		while((c = getchar()) != '\n') {
-			if(c == 32) {
+			if(c == ' ') {
 				*(cmd[len] + i++) = '\0';
 				i = 0;
 				cmd[++len] = (char *)malloc(10);
